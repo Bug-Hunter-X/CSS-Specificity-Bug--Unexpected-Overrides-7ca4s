@@ -1,0 +1,21 @@
+The following CSS code snippet demonstrates an uncommon error related to the specificity of CSS selectors.  The unexpected behavior arises from the overlapping specificity of selectors, causing unexpected styling overrides.
+
+```css
+div p {
+  color: blue;
+}
+
+.special p {
+  color: red;
+}
+
+#special-id p {
+  color: green;
+}
+
+<div id="special-id" class="special">
+  <p>This is a paragraph.</p>
+</div>
+```
+
+The paragraph within the div will be green. The `#special-id p` selector has higher specificity than `.special p` and `div p`.
